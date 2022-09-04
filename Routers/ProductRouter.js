@@ -10,6 +10,11 @@ class ProductsRouter {
     router.get("/", this.controller.getAll.bind(this.controller));
     router.get("/:productId", this.controller.getOne.bind(this.controller));
     router.post("/", this.controller.insertOne.bind(this.controller));
+    router.put("/:productId", this.controller.editOne.bind(this.controller));
+    router.delete(
+      "/:productId",
+      this.controller.deleteOne.bind(this.controller)
+    );
     return router;
   }
 }
