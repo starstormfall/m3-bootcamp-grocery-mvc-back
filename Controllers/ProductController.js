@@ -59,8 +59,11 @@ class ProductsController extends BaseController {
         res.status(404).json({ error: true, msg: err });
       }
       const deletedItem = output.destroy();
-      // const allItems = await this.model.findAll();
-      return res.json(deletedItem);
+      const allItems = await this.model.findAll();
+      // const allItems = await this.getAll();
+      // console.log("all:", allItems);
+      // return this.getAll();
+      return res.json(allItems);
       if (!deleteItem) {
         res.status(500).json({ error: true, msg: err });
       }
